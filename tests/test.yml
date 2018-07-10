@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: all
   remote_user: root
   vars:
     groups_to_create:
@@ -21,7 +21,7 @@
   roles:
     - ansible-users
 
-- hosts: localhost
+- hosts: all
   remote_user: root
   vars:
     users:
@@ -40,7 +40,7 @@
   roles:
     - ansible-users
 
-- hosts: localhost
+- hosts: all
   remote_user: root
   vars:
     users_create_per_user_group: false
@@ -64,7 +64,7 @@
   roles:
     - ansible-users
 
-- hosts: localhost
+- hosts: all
   remote_user: root
   vars:
     users_create_per_user_group: false
@@ -85,7 +85,7 @@
   roles:
     - ansible-users
 
-- hosts: localhost
+- hosts: all
   remote_user: root
   vars:
     users:

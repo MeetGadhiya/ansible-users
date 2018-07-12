@@ -36,7 +36,6 @@
     - skip_missing: yes
   tags: SSH_keys_for_admin_user
 
-
 - name: SSH keys for dev user
   authorized_key:
     user: "{{item.0.username}}"
@@ -47,8 +46,6 @@
     - ssh_keys
     - skip_missing: yes
   tags: SSH_keys_for_dev_user
-
-
 
 - name: Deleted user removal
   user:

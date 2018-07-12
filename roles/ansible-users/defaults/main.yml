@@ -1,14 +1,30 @@
 ---
-users_create_per_user_group: false
-
-
 
 admin_user: []
-developer_user: []
-delete_user: []
+# List of admin_users to create
+# Example:
+#   admin_user:
+#     - username: sanjara
+#       ssh_keys: 
+#         - "ssh-key of a user"
 
+developer_user: []
+# List of developer_users to create
+# Example:
+#   admin_user:
+#     - username: sanjara
+#       ssh_keys: 
+#         - "ssh-key of a user"
+
+delete_user: []
+#list of delete user
+#
+# Example:
+#   delete_user:
+#     - username: xyz
+
+groups_to_create: []
 # List of groups to create
 # Example:
 #   groups_to_create:
 #     - name: developers
-groups_to_create: []

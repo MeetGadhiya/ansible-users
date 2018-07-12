@@ -1,10 +1,11 @@
 ---
 
-users_create_per_user_group: false
+
 
 groups_to_create: 
   - name: developer
   - name: futurxadmin
+
 
 admin_user:
   - username: sanjara

@@ -8,7 +8,7 @@
 - name: User creation for admin
   user:
     name: "{{item.username}}"
-    group: {state: absent}
+    group: false
     groups: futurxadmin
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
@@ -18,7 +18,7 @@
 - name: User creation for developer
   user:
     name: "{{item.username}}"
-    group: {state: absent}
+    group: false
     groups: developer
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"

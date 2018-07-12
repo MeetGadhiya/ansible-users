@@ -28,7 +28,7 @@ delete_user:
   
   - username: kshah
     force: true
-    remove: /home/kshah
+    remove: true
 
       
 

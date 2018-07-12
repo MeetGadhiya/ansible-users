@@ -49,7 +49,7 @@
     user: "{{item.0.username}}"
     key: "{{item.1}}"
     path: "{{ item.0.home | default('/home/' + item.0.username) }}/.ssh/authorized_keys"
-  with_subelements:
+  with_items:
     - "{{developer_user}}"
     - ssh_keys
     - skip_missing: yes
@@ -70,7 +70,7 @@
 
 - name: Deleted per-user group removal
   group: name="{{item.username}}" state=absent
-  with_subelements: 
+  with_items: 
     - "{{developer_user}}"
     - "{{developer_user}}"
   when: users_create_per_user_group

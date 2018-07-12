@@ -2,20 +2,26 @@
 
 groups_to_create: 
   - name: developer
-  - name: futurx-admin
+  - name: futurxadmin
 
 admin_user:
-  - username: adm1
+  - username: sanjara
     ssh_keys: 
-      - "ssh-key for adm1"
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrg+oEyQOb9UXij76JLtVpOTbYtKZsUaFSODlO7BFATLRtMeYIekrhWd+RFvOzz62dXsBlT1CZom1P+9ktgMV+lbriX9XaCOlMWeLhk+dG+yf7kumBSGgrw3gw7x7PpWrbm8LnRsPwiG/96POu/nJ/cu2CYDvsFdAAWlX182Lvm28NvSeDzOaNPCTM4GoLcOnqSnLYNBSqb9yyUxgA5L+5igDRsKn246U2VaYG1OpVeh8vXoltY2c8EfqlUE2s4LzTwm7y63OHE6d43cRn+bA1br8Gp51GRnq6xymw9nOC6THyNP4SNWuBWwyhTpT624CHjZOVgqGEzKHn4foAzvWh sandeep@DESKTOP-2ND5V67"
+  - username: kshah
+    ssh_keys: 
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCp2fH41cRVTKLAlMlq9717ugSr20xHDwB6kTNoIxvEtUBPqNIwgubKCV2BnJwsqWhUeWpJza+4N0NQeQlBYggG0AYhXvPRfme9cJagzW3V4xIq70wEtV9uI8nCYeFzsyRFm53lyaiPYhZ+19ZbBWPv4zlOBtINdLEFGxQwCjOsmA4bL2cuVuJ/RTwFz1ATydX0hWTcpLeWNDp451/JnTNWBFONQurSwTZdZFsmxjuVzFrx9Xi7vcKtNZ2wgcp9yhlNbW+zJIACQdfU4zGWUvV0uzVkjunUct+PknV8nBd1GQaKLstAIJAAUQxg6tJj1lC9ofIw54vHVvpCYhHZOcfL SRKay CG@DESKTOP-051BK8JKAVYESHSHAH"
+ - username: mgadhiya
+    ssh_keys: 
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjFJPFZ4A0bPlVUEcV9Ym3u8oLrg0xXu5r/CkcBO2ABEnQyYneIjprfW9e8HPB2mbMn743VMrZEII+zL9Mk+4TFa3zaiUuoNLHQclfxByt/TNOIQCrYmxcFFrocFuTQP/Qf9ynht2mHSIqy1YS1jSBxR+3AjcOlUUcCZeJ08AZ4m4HekEfOnZ83MdXSelpoTIPuM9cOcoC8fsyzH80XzJUGPn8sjOh3MY1xz+CNTpiA5qDVUMnWRdTQTxrOVzvg6YZMbKdB6umXF36wtaaUQT+A7FpqAY7muHibntANJ0rpIHKdyUv/saYfaaM//qzEj36yRoIfTKisxU/uYKp+uNZ meetg@DESKTOP-JO1KDLE"
+      
+          
     
 
 developer_user:
-  - username: dev1   
+  - username: vdakvala   
     ssh_keys: 
-      - "ssh-keys for dev1"
-
-delete_user:
-  - username: dev1   
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQyGR4g4jfYMsahlNumcjs1mwL3MY+o/0qNGaH0SMLSfSw6tWEgpT3fJ6KfD1VQ9gF5EVQ47V38Rh91UyN64CaznINICDsJ7UQ0jp6RHwzQ0MeTlXLIjELTgYM/jHICutpz4kn0vuifLfvj8eZzEjv7Ou1SiNZs8SS/91uS//mOwmuibAzQWCBYZtMSgU5M5OlO4LCMrKgXQiHC1TSaYSzqFgVPAwRTUMbPRI+RDN9pWG5WrA5ClsCaVYkCecSPerfNd9NZC7ULVzv9hKlM6lHMHl5F8TrmRWPHh5NOV+zwdtgVmZyZzSxN1iJtq6a4ZT7zoyS/UcRs9R2OPz3r0aICxINQb5qCgzxy2SUwdSRm7pAmIbqRiQmS60sdb8MXrOC4gr8L3BoV5q49tYZUh+2WygCuv7tYdd35U9QgpyEVFrNnfvdQJIE0cm35R+jdBr5IiVLqh2+MY0KQUAQPes0+Vn6TMhpmtO7aXNr100avgixmJM4MXsx8+0Q31VpNxmE0/D8coFaOs1BGG/soDJIIJ5rBQfde+U8iUIlJuysXXzTR2RAOC2WidVyA4VkCpMKkEA8mHFf01bJCtx69cVtPsyxMXcuzV8x1ylRlJv9sUaC5ndY6epczhaKeSCg6vJruJNWzJpBGYohscKc9w1PlckRbuwEt8h41a2xbImxyQ== vacha.dakwala@srkaycg.com"
+ 
       
 

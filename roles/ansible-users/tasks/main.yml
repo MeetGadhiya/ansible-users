@@ -5,22 +5,13 @@
   with_items: "{{groups_to_create}}"
   tags: Creating_groups
 
-# - name: Per-user group creation
-#   group: name="{{item.username}}"
-#          gid="{{item.gid | default(item.uid) | default(omit)}}"
-#   with_items: 
-#     - "{{admin_user}}"
-#     - "{{developer_user}} "
-#   when: "'group' not in item and users_create_per_user_group"
-#   tags: per_user_group_creation
-
 - name: User creation for admin
   user:
     name: "{{item.username}}"
     groups: futurxadmin
+    group: futurxadmin
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
-    group: name="{{item.username}}" state=absent
   with_items: "{{admin_user}}"
   tags: User_creation_for_admin
 
@@ -28,9 +19,9 @@
   user:
     name: "{{item.username}}"
     groups: developer
+    group: developer
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
-    group: name="{{item.username}}" state=absent
   with_items: "{{developer_user}}"
   tags: User_creation_for_developer
 
@@ -68,12 +59,3 @@
   with_items: "{{delete_user}}"
   tags: Deleted_user_removal
 
-
-
-# - name: Deleted per-user group removal
-#   group: name="{{item.username}}" state=absent
-#   with_items: 
-#     - "{{developer_user}}"
-#     - "{{admin_user}}"
-#   when: users_create_per_user_group
-#   tags: deleted_per-user_group_removal

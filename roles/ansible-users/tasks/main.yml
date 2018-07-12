@@ -18,7 +18,7 @@
   user:
     name: "{{item.username}}"
     groups: futurxadmin
-    group: "{{item.group | default(item.username if users_create_per_user_group else users_group)}}"
+    group: "{{item.group | default(item.username if users_create_per_user_group)}}"
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
   with_items: "{{admin_user}}"
@@ -28,7 +28,7 @@
   user:
     name: "{{item.username}}"
     groups: developer
-    group: "{{item.group | default(item.username if users_create_per_user_group else users_group)}}"
+    group: "{{item.group | default(item.username if users_create_per_user_group)}}"
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
   with_items: "{{developer_user}}"

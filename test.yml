@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  user: ansadm
+  become: yes
+  become_method: sudo
+    roles:
+      - ansible-users

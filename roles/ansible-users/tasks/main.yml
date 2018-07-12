@@ -18,7 +18,7 @@
   user:
     name: "{{item.username}}"
     groups: futurxadmin
-    group: { name: {{item.group}} state: absent }
+    group: { name: {{item.group}}, state: absent }
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
   with_items: "{{admin_user}}"
@@ -28,7 +28,7 @@
   user:
     name: "{{item.username}}"
     groups: developer
-    group: { name: {{item.group}} state: absent }
+    group: { name: {{item.group}},state: absent }
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
   with_items: "{{developer_user}}"

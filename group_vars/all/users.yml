@@ -1,0 +1,21 @@
+---
+
+groups_to_create: 
+  - name: developer
+  - name: futurx-admin
+
+admin_user:
+  - username: adm1
+    ssh_keys: 
+      - "ssh-key for adm1"
+    
+
+developer_user:
+  - username: dev1   
+    ssh_keys: 
+      - "ssh-keys for dev1"
+
+delete_user:
+  - username: dev1   
+      
+

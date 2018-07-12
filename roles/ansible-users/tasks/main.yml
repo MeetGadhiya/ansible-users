@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ---
 
 - hosts: all
@@ -76,3 +77,68 @@
   when: users_create_per_user_group
   tags: ['users','configuration']
 https://www.mcdelivery.co.in/account/order-history/order-detail/0/DPS-DL-09-07-2018-12668
+=======
+---
+
+- name: Creating groups
+  group: name="{{item.name}}" gid="{{item.gid | default(omit)}}"
+  with_items: "{{groups_to_create}}"
+  tags: Creating_groups
+
+- name: User creation for admin
+  user:
+    name: "{{item.username}}"
+    #groups: "{{item.groups if item.group id defined else 'developer' }}"
+    groups: futurx-admin
+    shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
+    home: "/home/{{item.username}}"
+  with_items: "{{admin_user}}"
+  tags: User_creation_for_admin
+
+- name: User creation for developer
+  user:
+    name: "{{item.username}}"
+    #groups: "{{item.groups if item.group id defined else 'developer' }}"
+    groups: developer
+    shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
+    home: "/home/{{item.username}}"
+  with_items: "{{developer_user}}"
+  tags: User_creation_for_developer
+
+- name: SSH keys for admin user
+  authorized_key:
+    user: "{{item.0.username}}"
+    key: "{{item.1}}"
+    path: "{{ item.0.home | default('/home/' + item.0.username) }}/.ssh/authorized_keys"
+  with_subelements:
+    - "{{admin_user}}"
+    - ssh_keys
+    - skip_missing: yes
+  tags: SSH_keys_for_admin_user
+
+
+- name: SSH keys for dev user
+  authorized_key:
+    user: "{{item.0.username}}"
+    key: "{{item.1}}"
+    path: "{{ item.0.home | default('/home/' + item.0.username) }}/.ssh/authorized_keys"
+  with_subelements:
+    - "{{developer_user}}"
+    - ssh_keys
+    - skip_missing: yes
+  tags: SSH_keys_for_dev_user
+
+
+
+- name: Deleted user removal
+  user:
+    name: "{{item.username}}"
+    state: absent
+    remove: "{{item.remove | default(omit)}}"
+    force: "{{item.force | default(omit)}}"
+  with_items: "{{delete_user}}"
+  tags: Deleted_user_removal
+
+
+
+>>>>>>> Stashed changes

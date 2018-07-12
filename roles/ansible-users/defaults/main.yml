@@ -1,4 +1,6 @@
 ---
+users_create_per_user_group: false
+
 
 admin_user: []
 developer_user: []

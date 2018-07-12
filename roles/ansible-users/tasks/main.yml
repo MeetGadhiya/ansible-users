@@ -11,6 +11,7 @@
     groups: futurxadmin
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
+    users_create_per_user_group: false
   with_items: "{{admin_user}}"
   tags: User_creation_for_admin
 
@@ -20,6 +21,7 @@
     groups: developer
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
+    users_create_per_user_group: false
   with_items: "{{developer_user}}"
   tags: User_creation_for_developer
 

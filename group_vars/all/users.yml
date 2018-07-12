@@ -18,8 +18,8 @@ developer_user:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAAD2fH41cRVTKLAlMlq9717ugSr20xHDwB6kTNoIxvEtUBPqNIwgubKCV2BnJwsqWhUeWpJza+4N0NQeQlBYggG0AYhXvPRfme9cJagzW3V4xIq70wEtV9uI8nCYeFzsyRFm53lyaiPYhZ+19ZbBWPv4zlOBtINdLEFGxQwCjOsmA4bL2cuVuJ/RTwFz1ATydX0hWTcpLeWNDp451/JnTNWBFONQurSwTZdZFsmxjuVzFrx9Xi7vcKtNZ2wgcp9yhlNbW+zJIACQdfU4zGWUvV0uzVkjunUct+PknV8nBd1GQaKLstAIJAAUQxg6tJj1lC9ofIw54vHVvpCYhHZOcfL SRKay CG@DESKTOP-051BK8JKAVYESHSHAH"
   
 
-delete_user:
-  - username: kshah
+# delete_user:
+#   - username: kshah
   
 
 

@@ -27,7 +27,7 @@ delete_user:
   - username: vdakvala
   
   - username: kshah
-    force: -f
+    force: f
       
 
 

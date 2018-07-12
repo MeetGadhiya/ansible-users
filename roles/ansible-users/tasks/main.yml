@@ -8,10 +8,12 @@
 - name: Per-user group creation
   group: name="{{item.username}}"
          gid="{{item.gid | default(item.uid) | default(omit)}}"
-  with_items: "{{users}}"
+  with_items: 
+    - "{{admin_user}}"
+    - "{{developer_user}} "
   when: "'group' not in item and users_create_per_user_group"
   tags: per_user_group_creation
-  
+
 - name: User creation for admin
   user:
     name: "{{item.username}}"

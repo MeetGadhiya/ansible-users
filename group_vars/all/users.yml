@@ -1,6 +1,6 @@
 ---
 
-users_create_per_user_group: false
+users_per_user_groups: false
 
 groups_to_create: 
   - name: developer

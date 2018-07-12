@@ -19,7 +19,7 @@
     name: "{{item.username}}"
     groups: futurxadmin
     group: 
-      - name: {{item.username}} 
+      - name: {{ item.username }} 
       - state: absent 
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
@@ -31,7 +31,7 @@
     name: "{{item.username}}"
     groups: developer
     group: 
-      - name: {{item.username}}
+      - name: {{ item.username }}
       - state: absent 
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"

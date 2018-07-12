@@ -5,6 +5,13 @@
   with_items: "{{groups_to_create}}"
   tags: Creating_groups
 
+- name: Per-user group creation
+  group: name="{{item.username}}"
+         gid="{{item.gid | default(item.uid) | default(omit)}}"
+  with_items: "{{users}}"
+  when: "'group' not in item and users_create_per_user_group"
+  tags: per_user_group_creation
+  
 - name: User creation for admin
   user:
     name: "{{item.username}}"

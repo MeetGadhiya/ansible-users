@@ -54,8 +54,8 @@
   user:
     name: "{{item.username}}"
     state: absent
-    remove: "{{item.remove | default(omit)}}"
-    force: "{{item.force | default(omit)}}"
+    remove: "{{item.remove | default(true)}}"
+    force: "{{item.force | default(true)}}"
   with_items: "{{delete_user}}"
   tags: Deleted_user_removal
 

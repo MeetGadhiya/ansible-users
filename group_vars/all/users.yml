@@ -26,9 +26,7 @@ developer_user:
 delete_user:
   - username: vdakvala
   
-  - username: kshah
-    force: true
-    remove: true
+
 
       
 

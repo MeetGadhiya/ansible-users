@@ -49,7 +49,7 @@
     user: "{{item.0.username}}"
     key: "{{item.1}}"
     path: "{{ item.0.home | default('/home/' + item.0.username) }}/.ssh/authorized_keys"
-  with_items:
+  with_subelements:
     - "{{developer_user}}"
     - ssh_keys
     - skip_missing: yes

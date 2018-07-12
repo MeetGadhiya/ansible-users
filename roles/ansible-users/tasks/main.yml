@@ -8,7 +8,7 @@
 - name: Per-user group creation
   group: name="{{item.username}}"
          gid="{{item.gid | default(item.uid) | default(omit)}}"
-  with_items: 
+  with_subelements: 
     - "{{admin_user}}"
     - "{{developer_user}} "
   when: "'group' not in item and users_create_per_user_group"
@@ -18,9 +18,6 @@
   user:
     name: "{{item.username}}"
     groups: futurxadmin
-    group: 
-      - name: {{ item.username }} 
-        state: absent 
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
   with_items: "{{admin_user}}"
@@ -30,9 +27,6 @@
   user:
     name: "{{item.username}}"
     groups: developer
-    group: 
-      - name: {{ item.username }}
-        state: absent 
     shell: "{{item.shell if item.shell is defined else '/bin/bash'}}"
     home: "/home/{{item.username}}"
   with_items: "{{developer_user}}"
@@ -74,3 +68,10 @@
 
 
 
+- name: Deleted per-user group removal
+  group: name="{{item.username}}" state=absent
+  with_subelements: 
+    - "{{developer_user}}"
+    - "{{developer_user}}"
+  when: users_create_per_user_group
+  tags: deleted_per-user_group_removal

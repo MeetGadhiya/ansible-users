@@ -8,7 +8,7 @@
 - name: Per-user group creation
   group: name="{{item.username}}"
          gid="{{item.gid | default(item.uid) | default(omit)}}"
-  with_subelements: 
+  with_items: 
     - "{{admin_user}}"
     - "{{developer_user}} "
   when: "'group' not in item and users_create_per_user_group"
@@ -70,7 +70,7 @@
 
 - name: Deleted per-user group removal
   group: name="{{item.username}}" state=absent
-  with_subelements: 
+  with_items: 
     - "{{developer_user}}"
     - "{{admin_user}}"
   when: users_create_per_user_group

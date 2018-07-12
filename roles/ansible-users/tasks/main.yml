@@ -70,8 +70,8 @@
 
 - name: Deleted per-user group removal
   group: name="{{item.username}}" state=absent
-  with_items: 
+  with_subelements: 
     - "{{developer_user}}"
-    - "{{developer_user}}"
+    - "{{admin_user}}"
   when: users_create_per_user_group
   tags: deleted_per-user_group_removal
